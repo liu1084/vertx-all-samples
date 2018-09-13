@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jim.mybatis.service.mapper.GRolePrivilegeMapper">
+  <resultMap id="BaseResultMap" type="com.jim.entity.common.model.entity.GRolePrivilege">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="privilege_id" jdbcType="BIGINT" property="privilegeId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, privilege_id, role_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from g_role_privilege
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from g_role_privilege
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    insert into g_role_privilege (id, privilege_id, role_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{privilegeId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    insert into g_role_privilege
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="privilegeId != null">
+        privilege_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="privilegeId != null">
+        #{privilegeId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    update g_role_privilege
+    <set>
+      <if test="privilegeId != null">
+        privilege_id = #{privilegeId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    update g_role_privilege
+    set privilege_id = #{privilegeId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.jim.entity.common.model.entity.GRolePrivilege">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="privilege_id" jdbcType="BIGINT" property="privilegeId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, privilege_id, role_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from g_role_privilege
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from g_role_privilege
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    insert into g_role_privilege (id, privilege_id, role_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{privilegeId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    insert into g_role_privilege
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="privilegeId != null">
+        privilege_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="privilegeId != null">
+        #{privilegeId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    update g_role_privilege
+    <set>
+      <if test="privilegeId != null">
+        privilege_id = #{privilegeId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jim.entity.common.model.entity.GRolePrivilege">
+    update g_role_privilege
+    set privilege_id = #{privilegeId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
